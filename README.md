@@ -6,24 +6,25 @@
 + Pré-requisitos
     Docker Desktop instalado e rodando
 
-  Execução Rápida
-Primeira execução no terminal: docker-compose up --build
++ Comando Importantes:
+    Primeira execução no terminal: docker-compose up --build
 
-Execuções seguintes no terminal: docker-compose up
+    Execuções seguintes no terminal: docker-compose up
 
-Parar a aplicação no terminal: docker-compose down
+    Parar a aplicação no terminal: docker-compose down
 
-Verifique os containers: docker-compose ps
+    Verifique os containers: docker-compose ps
 
-Ver logs da aplicação: docker-compose logs app
+    Ver logs da aplicação: docker-compose logs app
 
-Acessar o banco: docker exec -it postgres-softfact psql -U postgres -d softfact
+    Acessar o banco: docker exec -it postgres-softfact psql -U postgres -d       softfact
 
-Executar em background: docker-compose up -d
+    Executar em background: docker-compose up -d
 
-Parar serviços: docker-compose stop
+    Parar serviços: docker-compose stop
 
-+ Fluxo da Aplicação
++ Fluxo da Aplicação:
+  
     Docker Compose inicia PostgreSQL e aplicação Spring Boot
 
     Flyway executa migrações do banco automaticamente
