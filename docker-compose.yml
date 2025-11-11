@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-softfact
+    environment:
+      POSTGRES_DB: softfact
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: reinaldo1990
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - softfact-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d softfact"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: softfact-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - softfact-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  softfact-network:
+    driver: bridge
