@@ -32,3 +32,7 @@
     Spring Boot inicia com banco pronto
 
     API REST fica disponível no endpoint da aplicação
+
+  ![Descrição da imagem](./img/composeRodando.png)
+  ![Descrição da imagem](./img/detalhesDoApp.png)
+  ![Descrição da imagem](./img/testandoConteiner.png)
