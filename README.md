@@ -31,4 +31,4 @@
 
     Spring Boot inicia com banco pronto
 
-    API REST fica disponível em http://localhost:8080
+    API REST fica disponível no endpoint da aplicação
